@@ -21437,7 +21437,7 @@ const templateFunction = _handlebars.default.template({
       return undefined;
     };
 
-    return "\r\n\r\n    <h1>" + alias2(alias1((stack1 = depth0 != null ? lookupProperty(depth0, "0") : depth0) != null ? lookupProperty(stack1, "name") : stack1, depth0)) + "</h1>\r\n    <p>Capytal:" + alias2(alias1((stack1 = depth0 != null ? lookupProperty(depth0, "0") : depth0) != null ? lookupProperty(stack1, "capital") : stack1, depth0)) + "</p>\r\n    <p>Population:" + alias2(alias1((stack1 = depth0 != null ? lookupProperty(depth0, "0") : depth0) != null ? lookupProperty(stack1, "population") : stack1, depth0)) + "</p>\r\n    <p>Language:</p>\r\n" + ((stack1 = lookupProperty(helpers, "each").call(depth0 != null ? depth0 : container.nullContext || {}, (stack1 = depth0 != null ? lookupProperty(depth0, "0") : depth0) != null ? lookupProperty(stack1, "languages") : stack1, {
+    return "\r\n\r\n    <h2>" + alias2(alias1((stack1 = depth0 != null ? lookupProperty(depth0, "0") : depth0) != null ? lookupProperty(stack1, "name") : stack1, depth0)) + "</h2>\r\n    <p>Capytal:" + alias2(alias1((stack1 = depth0 != null ? lookupProperty(depth0, "0") : depth0) != null ? lookupProperty(stack1, "capital") : stack1, depth0)) + "</p>\r\n    <p>Population:" + alias2(alias1((stack1 = depth0 != null ? lookupProperty(depth0, "0") : depth0) != null ? lookupProperty(stack1, "population") : stack1, depth0)) + "</p>\r\n    <p>Language:</p>\r\n" + ((stack1 = lookupProperty(helpers, "each").call(depth0 != null ? depth0 : container.nullContext || {}, (stack1 = depth0 != null ? lookupProperty(depth0, "0") : depth0) != null ? lookupProperty(stack1, "languages") : stack1, {
       "name": "each",
       "hash": {},
       "fn": container.program(1, data, 0),
