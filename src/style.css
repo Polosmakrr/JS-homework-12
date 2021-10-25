@@ -7,3 +7,17 @@ input {
 h1 {
   text-align: center;
 }
+
+.search-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.message-mistake {
+  font-size: 35px;
+}
+
+.none {
+  display: none;
+}

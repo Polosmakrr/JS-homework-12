@@ -5,7 +5,8 @@ import countryListTpl from './countryList.hbs'
 const refs = {
     searchForm: document.querySelector('.js-search-form'),
     input: document.querySelector('input'),
-    container: document.querySelector('.container')
+    container: document.querySelector('.container'),
+    mistake: document.querySelector('.message-mistake'),
 }
 
 
@@ -42,21 +43,35 @@ let delayEvent = debounce(inputValue,500)
 refs.input.addEventListener('input', delayEvent)
 function inputValue(el) {
     // console.log(el.currentTarget.value);
-let value = el.target.value;
+    let value = el.target.value;
+    
     fetchCountry(`${value}`)
         .then(countries => {
+
+            console.log('country',countries)
+            if (countries.message==='Page Not Found') {
+                refs.mistake.classList.remove('none');
+                refs.mistake.innerHTML = 'Please enter a more specific query!';
+                clearWindow()
+            }
      
         if (countries.length > 10)
         {
+            refs.mistake.classList.remove('none');
+            refs.mistake.innerHTML = 'Too many matches found. Please enter a more specific query!';
             return error('Too many matches found. Please enter a more specific query!');
         }
-        if (countries.status === 404) {
+            if (countries.status === 404) {
+                refs.mistake.classList.remove('none');
+                refs.mistake.innerHTML = 'No country has been found. Please enter a more specific query!';
             return error('No country has been found. Please enter a more specific query!');
         }
-        if (countries.length === 1) {
+            if (countries.length === 1) {
+            refs.mistake.classList.add('none');
             return renderCountry(countries)
         }
-        if (countries.length > 1 || countries.length <= 10) {
+            if (countries.length > 1 || countries.length <= 10) {
+            refs.mistake.classList.add('none');
             renderCountryList(countries)
         }
       })
