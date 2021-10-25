@@ -21592,12 +21592,14 @@ function inputValue(el) {
     if (countries.length > 10) {
       refs.mistake.classList.remove('none');
       refs.mistake.innerHTML = 'Too many matches found. Please enter a more specific query!';
+      clearWindow();
       return error('Too many matches found. Please enter a more specific query!');
     }
 
     if (countries.status === 404) {
       refs.mistake.classList.remove('none');
       refs.mistake.innerHTML = 'No country has been found. Please enter a more specific query!';
+      clearWindow();
       return error('No country has been found. Please enter a more specific query!');
     }
 
@@ -21678,7 +21680,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62454" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58032" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -59,11 +59,13 @@ function inputValue(el) {
         {
             refs.mistake.classList.remove('none');
             refs.mistake.innerHTML = 'Too many matches found. Please enter a more specific query!';
+            clearWindow()
             return error('Too many matches found. Please enter a more specific query!');
         }
             if (countries.status === 404) {
                 refs.mistake.classList.remove('none');
                 refs.mistake.innerHTML = 'No country has been found. Please enter a more specific query!';
+                clearWindow()
             return error('No country has been found. Please enter a more specific query!');
         }
             if (countries.length === 1) {
